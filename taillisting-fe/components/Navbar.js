@@ -1,6 +1,16 @@
 import React from "react";
 import hero from "../public/assets/images/hero/banner_3.jpg";
 import Image from "next/image";
+import {
+  MdSearch,
+  MdRestaurant,
+  MdLocalCafe,
+  MdLocalHospital,
+  MdSchool,
+  MdShoppingCart,
+} from "react-icons/md";
+import { CgGym } from "react-icons/cg";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -25,11 +35,10 @@ const Navbar = () => {
       </nav>
       <div className="relative h-screen">
         <Image src={hero} className="object-cover w-full h-full" />
-        {/* <img src={hero} className="object-cover w-full h-full" /> */}
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute inset-0 w-full h-full">
           <div className="flex items-center justify-center w-full min-h-full">
-            <div>
+            <div className="space-y-6">
               <div className="mb-4 text-center text-white">
                 <p className="mb-4 text-4xl font-bold capitalize">
                   Discover places that people love
@@ -38,7 +47,7 @@ const Navbar = () => {
                   We will help you to find the best places in the World.
                 </p>
               </div>
-              <div className="flex gap-5 ">
+              <div className="flex gap-5 mb-5">
                 <div>
                   <input
                     type="text"
@@ -54,12 +63,52 @@ const Navbar = () => {
                   />
                 </div>
                 <div>
-                  <button className="rounded-md py-2.5 px-6 bg-amber-500 text-lg text-white hover:bg-amber-600">
+                  <button className="flex items-center gap-2 rounded-md py-2.5 px-6 bg-amber-500 text-lg text-white hover:bg-amber-600">
+                    <MdSearch className="text-xl" />
                     Search
                   </button>
                 </div>
               </div>
-              <div></div>
+              <div>
+                <ul className="flex justify-center gap-5 text-sm text-white">
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <MdRestaurant className="hidden mr-2 align-middle md:inline-flex" />
+                      Restaurants
+                    </Link>
+                  </li>
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <MdLocalCafe className="hidden mr-2 align-middle md:inline-flex" />
+                      Cafe
+                    </Link>
+                  </li>
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <CgGym className="hidden mr-2 align-middle md:inline-flex" />
+                      Gym
+                    </Link>
+                  </li>
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <MdLocalHospital className="hidden mr-2 align-middle md:inline-flex" />
+                      Hospital
+                    </Link>
+                  </li>
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <MdSchool className="hidden mr-2 align-middle md:inline-flex" />
+                      School
+                    </Link>
+                  </li>
+                  <li className="capitalize">
+                    <Link href={"#"} className="hover:text-amber-500">
+                      <MdShoppingCart className="hidden mr-2 align-middle md:inline-flex" />
+                      Shopping
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
